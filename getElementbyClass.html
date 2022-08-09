@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 id="id-1" class="cat-1">Grayman</h1>
+    <h1 id="id-2" class="cat-2">A II</h1>
+    <p id="id-3" class="cat-1">PS</p>
+    <p id="id-4" class="cat-2">Naan</p>
+    <script>
+        var cat1 = document.getElementsByClassName("cat-1")
+        console.log(cat1);
+        console.log(cat1[0]);
+        console.log(cat1[1]);
+        var cat2 = document.getElementsByClassName("cat-2")
+        console.log(cat2[1]);
+        var nums = [];
+
+        for (var i = 0; i < 2; i++)
+        {
+            var num = document.getElementsByClassName("cat-2")
+            var num1 = document.getElementsByClassName("cat-1")
+            nums.push(num[i]);
+            nums.push(num1[i]);
+        }
+        console.log(nums);
+    </script>
+</body>
+
+</html>
