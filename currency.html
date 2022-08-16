@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="demo">
+        <p>To:-</p>
+        <input type="text" id="to">
+        <p>From:-</p>
+        <input type="text" id="from">
+        <p>Amount</p>
+        <input type="text" id="amount">
+        <p>Date</p>
+        <input type="date" id="date">
+
+        <button type="button" onclick="loadData()">Convert</button>
+        <h1 id="p1"></h1>
+        
+        
+    </div>
+
+    <script>
+        function loadData() {
+            var myHeaders = new Headers();
+            myHeaders.append("apikey", "Snf82Wo0K5AZuWTEJgb5oV1eihDc7PNM");
+
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow',
+                headers: myHeaders
+            };
+
+            var to = document.getElementById("to").value;
+            var from = document.getElementById("from").value;
+            var amount = document.getElementById("amount").value;
+            var date = document.getElementById("date").value;
+
+            fetch("https://api.apilayer.com/exchangerates_data/convert?to="+to+"&from="+from+"&amount="+amount+"&date"+date, requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    var json_object = JSON.parse(result);
+                    console.log(json_object);
+                    
+                    var result = json_object.result;
+                    console.log(result);
+                  
+                    document.getElementById("p1").innerHTML="Result:-" + result;
+                })
+                .catch(error => console.log('error', error))
+        }
+    </script>
+
+</body>
+
+</html>

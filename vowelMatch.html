@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 id="id-1" class="cat-1">Grayman</h1>
+    <h1 id="id-2" class="cat-2">A II</h1>
+    <p id="id-3" class="cat-1">PS</p>
+    <p id="id-4" class="cat-2">Naan</p>
+    <script>
+        var input = prompt("Enter the name");
+        var vowelRegex = '^[aieouAIEOU].*'
+        var matched = input.match(vowelRegex)
+        if (matched) {
+            var ids = document.getElementById("id-1");
+            ids.innerHTML = "Access Granted";
+        }
+        
+        else {
+            var ids = document.getElementById("id-1");
+            ids.innerHTML = "Access Denied";
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <form>
+            <div>
+                <input type="text" id="username">
+            </div>
+            <div>
+                <input type="password" id="pass">
+            </div>
+            <button id="btn">Submit</button>
+        </form>
+        <p id="output"></p>
+        <script>
+            document.addEventListener('DOMContentLoaded' , ()=>{
+            document.getElementById("btn").addEventListener('click',add)});
+
+            const add=(ev)=>{
+                ev.preventDefault();
+                let details = {
+                    name: document.getElementById("username").value,
+                    password: document.getElementById("pass").value
+                }
+                var json_output = JSON.stringify(details);
+                document.getElementById("output").innerHTML=json_output;
+            }
+        </script>
+    
+    </body>
+
+</html>

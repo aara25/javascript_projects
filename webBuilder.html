@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!-- Header -->
+    <h2>Shared Bill Tip Calculaor</h2>
+    <p>The Shared Bill Calculator considers the cost of service,number of people, and chosen tip percentage to calculate
+        the tip per person.</p>
+    <h1>Result</h1>
+    <div>
+        <h4>Tip</h4>
+        <p id="p1"></p>
+    </div>
+    <div>
+        <h4>Total Amount</h4>
+        <p id="p2"></p>
+    </div>
+    <div>
+        <h4>Tip per person</h4>
+        <p id="p3"></p>
+    </div>
+    <div>
+        <h4>Total per person</h4>
+        <p id="p4"></p>
+    </div>
+
+        <p>Price
+            <input type="text" id="id1">
+        </p>
+
+        <p>Tip
+            <input type="text" id="id2">
+        </p>
+
+        <p>Number of people
+            <input type="text" id="id3" />
+        </p>
+
+    <button onclick="add()">Calculate</button>
+    <button onclick="document.getElementById('id1').value = '';
+    document.getElementById('id2').value = '';
+    document.getElementById('id3').value = '';">clear</button>
+
+
+
+    <script>
+        function add() {
+
+            var price = parseInt(document.getElementById("id1").value);
+            var tip = parseInt(document.getElementById("id2").value);
+            var person = parseInt(document.getElementById("id3").value);
+            var total_tip = parseFloat(price * (tip / 100));
+            document.getElementById("p1").innerHTML = total_tip;
+            var total_price = parseFloat(price + total_tip);
+            document.getElementById("p2").innerHTML = total_price;
+            var tip_per_person = parseFloat(total_tip / person);
+            document.getElementById("p3").innerHTML = tip_per_person;
+            var total_per_person = parseFloat(total_price / person);
+            document.getElementById("p4").innerHTML = total_per_person;
+        }
+       
+    </script>
+
+
+
+
+</body>
+
+</html>

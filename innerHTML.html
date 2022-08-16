@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 id="id-1" class="cat-1">Grayman</h1>
+    <h1 id="id-2" class="cat-2">A II</h1>
+    <p id="id-3" class="cat-1">PS</p>
+    <p id="id-4" class="cat-2">Naan</p>
+    <script>
+        var cat1 = document.getElementsByClassName("cat-1")
+        cat1[0].innerHTML = "This element belongs to category 2!!";
+        cat1[1].innerHTML = "This element belongs to category 2!!";
+
+
+        for (var i = 1; i <= 4; i++)
+        {
+            var ids = document.getElementById("id-" + i);
+            ids.innerHTML = "This element has id!!!" + i;
+        }
+  
+    </script>
+</body>
+
+</html>
